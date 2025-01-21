@@ -40,7 +40,7 @@ const InputBox=(props)=>{
             <div className="p-5 m-3 flex flex-wrap rounded-xl bg-white ">
                 <div className="flex flex-col pr-35">
                     <label className="mb-3.5  text-gray-400">{props.items}:</label>
-                    <input type="number" min="0" className="border-1 rounded-sm appearance-none [&::-webkit-inner-spin-button]:appearance-none border-black h-10" onChange={(event)=> props.inputAmount(event.target.value)} readOnly={!isEditable}/>
+                    <input type="number" min="0" className="border-1 rounded-sm appearance-none [&::-webkit-inner-spin-button]:appearance-none border-black h-10" onChange={isEditable?(event)=> props.inputAmount(event.target.value):undefined} readOnly={!isEditable} value={props.convertedAmount}/>
                 </div>
                 <div className="flex flex-col">
                     <label className="mb-3.5  text-gray-400">CURRENCY TYPE</label>
